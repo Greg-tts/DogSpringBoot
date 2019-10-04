@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tts.dogExample.model.Dog;
@@ -29,7 +30,7 @@ public class MainController {
     
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/dog")
-    public void createDog(Dog dog) {
+    public void createDog(@RequestBody Dog dog) {
     	dogServiceImpl.saveDog(dog);
     }
 }
