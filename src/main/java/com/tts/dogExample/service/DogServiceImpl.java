@@ -22,5 +22,24 @@ public class DogServiceImpl implements DogServiceInt{
 	public void saveDog(Dog dog) {
 		dogRepository.save(dog);
 	}
+
+	@Override
+	public void deleteDogById(Long id) {
+		dogRepository.deleteById(id);
+	}
+
+	@Override
+	public Dog getDogUsingId(Long id) {
+		return dogRepository.findDogById(id);
+	}
+
+	@Override
+	public void updateDogUsingId(Dog dogWithChanges, Long id) {
+		Dog currentDog = dogRepository.findDogById(id);
+		currentDog.setName(dogWithChanges.getName());
+		currentDog.setBreed(dogWithChanges.getBreed());
+		currentDog.setAge(dogWithChanges.getAge());
+		dogRepository.save(currentDog);
+	}
 	
 }

@@ -10,4 +10,5 @@ import com.tts.dogExample.model.Dog;
 @Repository
 public interface DogRepository extends JpaRepository<Dog, Long>{
 	public List<Dog> findAll();
+	public Dog findDogById(Long id);
 }
