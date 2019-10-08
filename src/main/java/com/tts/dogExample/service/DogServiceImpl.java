@@ -41,5 +41,8 @@ public class DogServiceImpl implements DogServiceInt{
 		currentDog.setAge(dogWithChanges.getAge());
 		dogRepository.save(currentDog);
 	}
-	
+	@Override
+	public void deleteAllDogs() {
+		dogRepository.deleteAll();
+	}
 }

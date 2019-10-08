@@ -10,4 +10,5 @@ public interface DogServiceInt {
 	public void deleteDogById(Long id);
 	public Dog getDogUsingId(Long id);
 	public void updateDogUsingId(Dog dog, Long id);
+	public void deleteAllDogs();
 }

@@ -33,8 +33,8 @@ public class MainController {
     
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/dog/{id}")
-    public void getDog(@PathVariable Long id) {
-    	dogServiceImpl.getDogUsingId(id);
+    public Dog getDog(@PathVariable Long id) {
+    	return dogServiceImpl.getDogUsingId(id);
     }
     
     @CrossOrigin(origins = "http://localhost:3000")
@@ -47,6 +47,12 @@ public class MainController {
     @DeleteMapping("/dog/{id}")
     public void deleteDog(@PathVariable Long id) {
     	dogServiceImpl.deleteDogById(id);
+    }
+    
+    @CrossOrigin(origins = "http://localhost:3000")
+    @DeleteMapping("/dogs")
+    public void deleteDogs(){
+    	dogServiceImpl.deleteAllDogs();
     }
     
     @CrossOrigin(origins = "http://localhost:3000")
